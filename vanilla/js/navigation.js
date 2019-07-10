@@ -19,9 +19,6 @@ Panel.prototype.hide = function() {
 
 function NavManager(startPanel) {
 	this.stack = [startPanel] // List of Panels
-}
-
-NavManager.prototype.start = function() {
 	this.stack[0].show()
 }
 
@@ -40,4 +37,11 @@ NavManager.prototype.back = function() {
 	const curr = this.stack.pop()
 	curr.hide()
 	this.stack[this.stack.length-1].show()
+}
+
+NavManager.prototype.reset = function(startPanel) {
+	const curr = this.stack.pop()
+	curr.hide()
+	this.stack = [startPanel]
+	startPanel.show()
 }

@@ -12,12 +12,18 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+	<script src="js/navigation.js"></script>
+	<script src="js/main.js"></script>
 </head>
 <body>
 <nav class="blue darken-3" role="navigation">
 	<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">App Stores</a>
 		<ul class="right hide-on-med-and-down">
-			<li><a href="#">Store</a></li>
+			<li><a onclick="navStore()">Store</a></li>
+			<li><a onclick="navLogin()">Login</a></li>
 		</ul>
 
 		<ul id="nav-mobile" class="sidenav">
@@ -27,9 +33,12 @@
 	</div>
 </nav>
 <div class="section no-pad-bot" id="index-banner">
-	<div class="container">
+	<div class="container" id="store">
+		<p>This is the store.</p>
+	</div>
 
-
+	<div class="container" id="login">
+		<p>This is login.</p>
 	</div>
 </div>
 
