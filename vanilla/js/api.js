@@ -5,15 +5,6 @@ const arweave = Arweave.init({
 });
 
 
-function dataURLtoFile(dataurl, filename) {
-    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-    while (n--) {
-        u8arr[n] = bstr.charCodeAt(n);
-    }
-    return new File([u8arr], filename, {type: mime});
-}
-
 function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', text);
@@ -25,10 +16,7 @@ function download(filename, text) {
     element.click();
 
     document.body.removeChild(element);
-
-    console.log("ye");
 }
-
 
 
 function fileToBase64(file, callback) {
@@ -41,18 +29,22 @@ var fileObject = {};
 
 
 function arweaveToFile(arweave) {
-
-    download("flie.xpi", arweave.base64);
-
+    download("file.xpi", arweave.base64);
 }
+
 
 
 $(document).ready(function () {
     console.log("we gucci");
     arweave.network.getInfo().then(console.log);
 
+    $('#btnLogin').click(function() {
+        const file = document.querySelectorAll('input[type="file"]')[0].files[0];
+
+    });
+
     $('#btnUpload').click(function () {
-        const file = document.querySelector('input[type="file"]').files[0];
+        const file = document.querySelectorAll('input[type="file"]')[1].files[0];
         fileToBase64(file, (evt) => {
             fileObject.base64 = evt.target.result;
         });

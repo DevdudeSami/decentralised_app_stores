@@ -12,7 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/libs/base64-string.js"></script>
     <script src="js/api.js"></script>
 
 
@@ -31,14 +30,28 @@
     </div>
 </nav>
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
+
+    <div class="container" id="loginContainer">
         <div class="file-field input-field">
             <div class="btn">
                 <span>File</span>
                 <input type="file" multiple>
             </div>
             <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                <input class="file-path validate" type="text" placeholder="Give me all your keyfile">
+            </div>
+        </div>
+        <a id="btnLogin" class="waves-effect waves-light btn">Login</a>
+    </div>
+    <hr />
+    <div id="uploadContainer" class="container">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Give me all your XPI file">
             </div>
         </div>
         <a id="btnUpload" class="waves-effect waves-light btn">Upload</a>
